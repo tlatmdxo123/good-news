@@ -141,7 +141,7 @@ const ResultPage = () => {
   return (
     <Stack>
       <Container>
-        <Swiper pagination={true} modules={[Pagination]}>
+        <Swiper pagination={true} modules={[Pagination]} spaceBetween={50}>
           <SwiperSlide>
             <LetterCard />
           </SwiperSlide>
@@ -161,7 +161,6 @@ const ResultPage = () => {
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  padding: 30px;
   opacity: 0.8;
   background: linear-gradient(
     192deg,
@@ -175,13 +174,18 @@ const Container = styled.div`
     width: 100%;
     padding-bottom: 23px;
 
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+    }
+
     .swiper-pagination-bullet-active {
       background-color: ${({ theme }) => theme.primary};
     }
   }
 `;
 const CardContainer = styled.div`
-  width: 100%;
+  width: calc(100% - 60px);
   height: calc(100% - 26px);
   border-radius: 20px;
   background: #fff;
