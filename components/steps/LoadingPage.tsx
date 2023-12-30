@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Stack from "@/components/Stack";
 import { useInfoStore } from "@/store/useInfoStore";
 import { PageProps } from "@/types/common";
-import { ClipLoader } from "react-spinners";
+import { PuffLoader } from "react-spinners";
 
 interface LoadingPageProps extends PageProps {}
 
@@ -18,7 +18,7 @@ const LoadingPage = ({ onNext }: LoadingPageProps) => {
   return (
     <Stack>
       <Box>
-        <ClipLoader
+        <PuffLoader
           color="#30F"
           loading={true}
           size={70}
