@@ -49,6 +49,7 @@ const SelectList = ({ list, item, row, col }: SelectListProps) => {
 };
 
 const Container = styled.div`
+  margin-bottom: 50px;
   .swiper-slide {
     width: 150px !important;
   }

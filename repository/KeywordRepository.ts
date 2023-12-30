@@ -38,9 +38,6 @@ const wishList = [
   { id: 10, label: "신앙의 훈련과 성장" },
   { id: 11, label: "신앙의 훈련과 성장" },
   { id: 12, label: "신앙의 훈련과 성장" },
-  { id: 13, label: "신앙의 훈련과 성장" },
-  { id: 14, label: "신앙의 훈련과 성장" },
-  { id: 15, label: "신앙의 훈련과 성장" },
 ];
 
 const letterList: {

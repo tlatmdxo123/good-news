@@ -20,33 +20,34 @@ const ThisYearPage = ({ onNext }: ThisYearPageProps) => {
   return (
     <Stack>
       <PageLayout
-        button={
-          <FullButton
-            isPrimary
-            onClick={() => {
-              if (!selectedKeyword.length) return;
-              onNext();
-            }}
-          />
+        bottom={
+          <>
+            <SelectList
+              list={keywordList}
+              row={4}
+              col={6}
+              item={(keyword) => (
+                <Keyword
+                  value={keyword.label}
+                  onClick={() => selectKeyword(keyword.id)}
+                  selected={selectedKeyword.includes(keyword.id)}
+                />
+              )}
+            />
+            <FullButton
+              isPrimary
+              onClick={() => {
+                if (!selectedKeyword.length) return;
+                onNext();
+              }}
+            />
+          </>
         }
       >
         <Container>
           <PageTitle
             title={`2023년은 ${name}님에게\n어떤 한해였나요?`}
             subTitle="*최대 두개까지 선택할 수 있어요"
-          />
-
-          <SelectList
-            list={keywordList}
-            row={4}
-            col={6}
-            item={(keyword) => (
-              <Keyword
-                value={keyword.label}
-                onClick={() => selectKeyword(keyword.id)}
-                selected={selectedKeyword.includes(keyword.id)}
-              />
-            )}
           />
         </Container>
       </PageLayout>

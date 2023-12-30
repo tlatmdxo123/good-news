@@ -30,14 +30,19 @@ const FullButton = ({
   onClick,
 }: PropsWithChildren<FullButtonProps>) => {
   return (
-    <ButtonStyle isPrimary={isPrimary} onClick={onClick}>
-      <div />
-      <span>다음으로</span>
-      <Arrow />
-    </ButtonStyle>
+    <Container>
+      <ButtonStyle isPrimary={isPrimary} onClick={onClick}>
+        <div />
+        <span>다음으로</span>
+        <Arrow />
+      </ButtonStyle>
+    </Container>
   );
 };
 
+const Container = styled.div`
+  padding: 0 10px;
+`;
 const ButtonStyle = styled.button<{ isPrimary: boolean }>`
   width: 100%;
   padding: 18px 25px;

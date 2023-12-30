@@ -16,7 +16,7 @@ const NamePage = ({ onNext }: NamePageProps) => {
   return (
     <Stack>
       <PageLayout
-        button={
+        bottom={
           <FullButton
             isPrimary
             onClick={() => {

@@ -22,9 +22,6 @@ export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        {step >= 2 && step <= 4 && (
-          <ProcessHeader currentStep={step} onPrev={() => setStep(step - 1)} />
-        )}
         {step === 1 && <StartPage onNext={() => setStep(2)} />}
         {step === 2 && <NamePage onNext={() => setStep(3)} />}
         {step === 3 && <ThisYearPage onNext={() => setStep(4)} />}

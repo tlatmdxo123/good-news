@@ -18,14 +18,26 @@ const NextYearPage = ({ onNext }: NextYearPageProps) => {
   return (
     <Stack>
       <PageLayout
-        button={
-          <FullButton
-            isPrimary
-            onClick={() => {
-              if (!selectedWishList.length) return;
-              onNext();
-            }}
-          />
+        bottom={
+          <>
+            <Grid>
+              {wishList.map((wish) => (
+                <BoxSelect
+                  key={wish.id}
+                  value={wish.label}
+                  onClick={() => selectWish(wish.id)}
+                  selected={selectedWishList.includes(wish.id)}
+                />
+              ))}
+            </Grid>
+            <FullButton
+              isPrimary
+              onClick={() => {
+                if (!selectedWishList.length) return;
+                onNext();
+              }}
+            />
+          </>
         }
       >
         <TitleWrapper>
@@ -34,16 +46,6 @@ const NextYearPage = ({ onNext }: NextYearPageProps) => {
             subTitle="*최대 두개까지 선택할 수 있어요"
           />
         </TitleWrapper>
-        <Grid>
-          {wishList.map((wish) => (
-            <BoxSelect
-              key={wish.id}
-              value={wish.label}
-              onClick={() => selectWish(wish.id)}
-              selected={selectedWishList.includes(wish.id)}
-            />
-          ))}
-        </Grid>
       </PageLayout>
     </Stack>
   );
@@ -58,6 +60,7 @@ const Grid = styled.ul`
   grid-template-columns: repeat(3, 95px);
   grid-gap: 20px;
   justify-content: center;
+  margin-bottom: 50px;
 `;
 
 export default NextYearPage;

@@ -37,9 +37,7 @@ const ProcessHeader = ({ currentStep, onPrev }: ProcessHeaderProps) => {
 };
 
 const Container = styled.div`
-  position: absolute;
-  left: 22px;
-  top: 20px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   gap: 30px;

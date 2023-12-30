@@ -1,18 +1,24 @@
 import { PropsWithChildren } from "react";
 import styled from "styled-components";
+import ProcessHeader from "../ProcessHeader";
+import { useInfoStore } from "@/store/useInfoStore";
 
 interface PageLayoutProps {
-  button: JSX.Element;
+  bottom: JSX.Element;
 }
 
 const PageLayout = ({
-  button,
+  bottom,
   children,
 }: PropsWithChildren<PageLayoutProps>) => {
+  const step = useInfoStore((state) => state.step);
+  const setStep = useInfoStore((state) => state.moveStep);
+
   return (
     <Container>
+      <ProcessHeader currentStep={step} onPrev={() => setStep(step - 1)} />
       <div className="contents">{children}</div>
-      {button}
+      {bottom}
     </Container>
   );
 };
@@ -22,11 +28,10 @@ const Container = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 10px;
-  padding-top: 118px;
+  padding: 30px 0 10px 0;
 
   .contents {
-    padding: 0 20px 60px 20px;
+    padding: 70px 20px 60px 20px;
     flex-grow: 1;
     overflow-y: scroll;
     -ms-overflow-style: none; /* 인터넷 익스플로러 */
