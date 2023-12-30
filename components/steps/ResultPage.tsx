@@ -55,7 +55,7 @@ const IntroduceCard = ({ onModalOpen }: { onModalOpen: () => void }) => {
         </CommonCotents>
 
         <CommonButtonContainer>
-          <CommonButton>사역소개</CommonButton>
+          <CommonButton href="https://komked.org/mklc/">사역소개</CommonButton>
           <CommonButton onClick={onModalOpen}>후원하기</CommonButton>
         </CommonButtonContainer>
       </IntroduceContainer>
@@ -106,10 +106,22 @@ const SponsorModal = ({ close }: { close: () => void }) => {
           <br /> 후원 방법을 선택해주세요
         </ModalTitle>
         <ModalButtonContainer>
-          <ModalButton>
-            <ModalBullet />
-          </ModalButton>
-          <SponsorButton />
+          <a
+            style={{ display: "block", height: "95px" }}
+            target="blank"
+            href="https://mrmweb.hsit.co.kr/v2/Member/MemberJoin.aspx?action=join&server=R%20ymWRGciEHntzyO2dIUpw=="
+          >
+            <ModalButton>
+              <ModalBullet />
+            </ModalButton>
+          </a>
+          <a
+            target="blank"
+            style={{ display: "block", height: "95px" }}
+            href="https://mrmweb.hsit.co.kr/v2/Member/SupportOnce.aspx?action=once&server=R%20ymWRGciEHntzyO2dIUpw=="
+          >
+            <SponsorButton />
+          </a>
         </ModalButtonContainer>
         <ModalBottomButton onClick={close}>닫기</ModalBottomButton>
       </ModalContainer>
@@ -310,7 +322,8 @@ const CommonButtonContainer = styled.div`
   gap: 10px;
   padding: 0 20px;
 `;
-const CommonButton = styled.button`
+const CommonButton = styled.a`
+  display: block;
   border-radius: 10px;
   border: 1px solid #30f;
   background: #fff;
