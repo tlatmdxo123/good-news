@@ -43,7 +43,12 @@ const IntroduceCard = ({ onModalOpen }: { onModalOpen: () => void }) => {
     <CardContainer>
       <IntroduceContainer>
         <CommonCotents>
-          <Image src="/share-image.png" height={174} width={286} />
+          <Image
+            src="/share-image.png"
+            height={174}
+            width={286}
+            alt="여러 사람 이미지"
+          />
           <IntroduceTitle>
             콤케드는 선교사 자녀를 위한
             <br /> 사역을 하고 있습니다.
@@ -227,7 +232,7 @@ const ImageBox = styled.div`
 `;
 
 const Letter = styled.div`
-  @media (max-height: 670px) {
+  @media (max-height: 630px) {
     display: none;
   }
 `;
