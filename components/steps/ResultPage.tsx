@@ -72,8 +72,7 @@ const ShareCard = () => {
   const setStep = useInfoStore((state) => state.moveStep);
   const share = () => {
     window.navigator.share({
-      title: "말씀카드", // 공유될 제목
-      text: "설명", // 공유될 설명
+      url: "https://good-news-gamma.vercel.app/",
     });
   };
 
