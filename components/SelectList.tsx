@@ -1,10 +1,5 @@
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper/modules";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
 
 export type SelectItem = {
   id: number;
@@ -19,6 +14,7 @@ interface SelectListProps {
 }
 
 const SelectList = ({ list, item, row, col }: SelectListProps) => {
+  const ref = useRef<(HTMLDivElement | null)[]>([]);
   const gridList = Array(row)
     .fill(0)
     .map((_, idx) => {
@@ -27,32 +23,49 @@ const SelectList = ({ list, item, row, col }: SelectListProps) => {
       return list.slice(startIndex, endIndex);
     });
 
+  useEffect(() => {
+    ref.current.forEach((item) => {
+      if (item) {
+        item.scrollBy({ left: 85 });
+      }
+    });
+  }, []);
+
   return (
-    <Container>
+    <div>
       {gridList.map((itemList, idx) => {
         return (
-          <Swiper
-            key={idx}
-            spaceBetween={20}
-            slidesPerView={3}
-            freeMode={true}
-            modules={[FreeMode]}
+          <SelectFrame
+            key={`row-${itemList[0].id}`}
+            ref={(curr) => (ref.current[idx] = curr)}
           >
-            {itemList.map((itemData) => (
-              <SwiperSlide key={itemData.id}>{item(itemData)}</SwiperSlide>
-            ))}
-          </Swiper>
+            <ListBox isEven={(idx + 1) % 2 === 0}>
+              {itemList.map((itemData) => item(itemData))}
+            </ListBox>
+          </SelectFrame>
         );
       })}
-    </Container>
+    </div>
   );
 };
 
-const Container = styled.div`
-  margin-bottom: 50px;
-  .swiper-slide {
-    width: 150px !important;
+const SelectFrame = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+  &::-webkit-scrollbar {
+    display: none;
   }
+`;
+
+const ListBox = styled.ul<{ isEven: boolean }>`
+  display: flex;
+  gap: 20px;
+  padding: ${({ isEven }) => (isEven ? `0 95px` : `0 20px`)};
 `;
 
 export default SelectList;

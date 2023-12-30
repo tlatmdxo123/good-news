@@ -22,7 +22,7 @@ const initialState = {
 };
 // Create your store, which includes both state and (optionally) actions
 export const useInfoStore = create<State & Action>((set) => ({
-  step: 4,
+  step: 1,
   ...initialState,
   moveStep: (step: number) => set(() => ({ step })),
   updateName: (name) => set(() => ({ name })),
