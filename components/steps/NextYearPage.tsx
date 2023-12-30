@@ -55,8 +55,9 @@ const TitleWrapper = styled.div`
 
 const Grid = styled.ul`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(3, 95px);
+  grid-gap: 20px;
+  justify-content: center;
 `;
 
 export default NextYearPage;
