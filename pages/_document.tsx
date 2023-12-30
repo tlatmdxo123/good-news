@@ -49,10 +49,7 @@ export default class MyDocument extends Document {
             property="og:url"
             content="https://good-news-gamma.vercel.app/"
           />
-          <meta
-            property="og:image"
-            content="https://ia.media-imdb.com/images/rock.jpg"
-          />
+          <meta property="og:image" content="/og.png" />
         </Head>
         <script
           dangerouslySetInnerHTML={{
