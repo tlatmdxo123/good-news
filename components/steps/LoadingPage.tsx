@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Stack from "@/components/Stack";
 import { useInfoStore } from "@/store/useInfoStore";
 import { PageProps } from "@/types/common";
+import { ClipLoader } from "react-spinners";
 
 interface LoadingPageProps extends PageProps {}
 
@@ -17,6 +18,12 @@ const LoadingPage = ({ onNext }: LoadingPageProps) => {
   return (
     <Stack>
       <Box>
+        <ClipLoader
+          color="#30F"
+          loading={true}
+          size={70}
+          aria-label="Loading Spinner"
+        />
         <h1>
           {`${name}님을 위한 말씀을 찾고 있어요`}
           <br />
@@ -29,9 +36,11 @@ const LoadingPage = ({ onNext }: LoadingPageProps) => {
 
 const Box = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
+  gap: 29px;
 
   h1 {
     color: #000;
