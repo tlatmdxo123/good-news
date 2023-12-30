@@ -40,7 +40,20 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta
+            property="og:title"
+            content="콤케드와 함께 하는 2024년 신년말씀 뽑기"
+          />
+          <meta
+            property="og:url"
+            content="https://good-news-gamma.vercel.app/"
+          />
+          <meta
+            property="og:image"
+            content="https://ia.media-imdb.com/images/rock.jpg"
+          />
+        </Head>
         <script
           dangerouslySetInnerHTML={{
             __html: `(function (d) {
