@@ -15,8 +15,8 @@ const BoxSelect = ({ value, selected, onClick }: BoxSelectProps) => {
 };
 
 const Box = styled.li`
-  width: 97px;
-  height: 80px;
+  width: 104px;
+  height: 75px;
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.primary};

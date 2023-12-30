@@ -44,9 +44,6 @@ const NamePage = ({ onNext }: NamePageProps) => {
 
 const Container = styled.div`
   height: 100%;
-  padding-top: 108px;
-  display: flex;
-  flex-direction: column;
 `;
 
 const InputWrapper = styled.div`
@@ -54,6 +51,7 @@ const InputWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 170px;
 `;
 
 export default NamePage;

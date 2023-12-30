@@ -31,7 +31,7 @@ const Container = styled.div`
   padding: 30px 0 10px 0;
 
   .contents {
-    padding: 70px 20px 60px 20px;
+    padding: 70px 20px 0 20px;
     flex-grow: 1;
     overflow-y: scroll;
     -ms-overflow-style: none; /* 인터넷 익스플로러 */
