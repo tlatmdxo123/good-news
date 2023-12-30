@@ -41,12 +41,10 @@ const NextYearPage = ({ onNext }: NextYearPageProps) => {
             </>
           }
         >
-          <TitleWrapper>
-            <PageTitle
-              title={`2024년에는\n어떤 바램들이 있으신가요?`}
-              subTitle="*최대 두개까지 선택할 수 있어요"
-            />
-          </TitleWrapper>
+          <PageTitle
+            title={`2024년에는\n어떤 바램들이 있으신가요?`}
+            subTitle="*최대 두개까지 선택할 수 있어요"
+          />
         </PageLayout>
       </Container>
     </Stack>
@@ -58,12 +56,9 @@ const Container = styled.div`
   height: 100%;
   .contents {
     @media (max-height: 700px) {
-      padding-top: 10px;
+      padding-top: 30px;
     }
   }
-`;
-const TitleWrapper = styled.div`
-  margin-bottom: 50px;
 `;
 
 const Grid = styled.ul`
@@ -72,6 +67,10 @@ const Grid = styled.ul`
   grid-gap: 10px;
   justify-content: center;
   margin-bottom: 50px;
+
+  @media (max-height: 690px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export default NextYearPage;

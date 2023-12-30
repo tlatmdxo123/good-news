@@ -17,6 +17,8 @@ const ThisYearPage = ({ onNext }: ThisYearPageProps) => {
   const keywordList = KeywordRepository.getKeywordList();
   const selectKeyword = useInfoStore((state) => state.selectKeyword);
 
+  const isMiniDivice = window.innerHeight < 690;
+
   return (
     <Stack>
       <PageLayout
@@ -24,8 +26,8 @@ const ThisYearPage = ({ onNext }: ThisYearPageProps) => {
           <>
             <SelectList
               list={keywordList}
-              row={4}
-              col={6}
+              row={isMiniDivice ? 3 : 4}
+              col={isMiniDivice ? 8 : 6}
               item={(keyword) => (
                 <Keyword
                   value={keyword.label}
