@@ -11,8 +11,10 @@ import Image from "next/image";
 import { useInfoStore } from "@/store/useInfoStore";
 
 const LetterCard = () => {
-  const wishList = KeywordRepository.getWishList();
-  const letter = KeywordRepository.getLetter(wishList[0].id);
+  const wishList = useInfoStore((state) => state.wishList);
+  const letterList = KeywordRepository.getLetter(wishList[0]);
+  const randomNum = Math.floor(Math.random() * 5);
+  const letter = letterList[randomNum];
 
   return (
     <CardContainer>
@@ -240,10 +242,11 @@ const Title = styled.h1`
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 400;
-  line-height: 34px; /* 141.667% */
+  line-height: 30px; /* 136.364% */
+  white-space: pre-wrap;
 `;
 
 const Info = styled.p`
@@ -252,7 +255,7 @@ const Info = styled.p`
   font-family: Pretendard;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 20px; /* 111.111% */
   margin-top: 10px;
 `;
@@ -261,20 +264,22 @@ const SubTitle = styled.h2`
   color: #9d9d9d;
   text-align: center;
   font-family: Pretendard;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 111.111% */
+  font-weight: 300;
+  line-height: 20px; /* 125% */
+  white-space: pre-wrap;
+  margin-bottom: 10px;
 `;
 
 const SubInfo = styled.p`
   color: #9d9d9d;
   text-align: center;
   font-family: Pretendard;
-  font-size: 14px;
+  font-size: 12px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
+  font-weight: 600;
+  line-height: 20px; /* 166.667% */
 `;
 
 const IntroduceContainer = styled.div`
