@@ -25,10 +25,10 @@ const LetterCard = () => {
             alt="물결 모양 이미지"
           />
         </ImageBox>
-        <Letter>
+        <div>
           <Title>{letter.ko.text}</Title>
           <Info>{letter.ko.info}</Info>
-        </Letter>
+        </div>
         <Letter>
           <SubTitle>{letter.en.text}</SubTitle>
           <SubInfo>{letter.en.info}</SubInfo>
@@ -43,7 +43,7 @@ const IntroduceCard = ({ onModalOpen }: { onModalOpen: () => void }) => {
     <CardContainer>
       <IntroduceContainer>
         <CommonCotents>
-          <IntroduceImageBox></IntroduceImageBox>
+          <Image src="/share-image.png" height={174} width={286} />
           <IntroduceTitle>
             콤케드는 선교사 자녀를 위한
             <br /> 사역을 하고 있습니다.
@@ -226,7 +226,11 @@ const ImageBox = styled.div`
   justify-content: center;
 `;
 
-const Letter = styled.div``;
+const Letter = styled.div`
+  @media (max-height: 670px) {
+    display: none;
+  }
+`;
 
 const Title = styled.h1`
   color: #000;
@@ -277,16 +281,7 @@ const IntroduceContainer = styled.div`
   padding-bottom: 20px;
 `;
 
-const IntroduceContents = styled.div`
-  margin-bottom: 50px;
-`;
-
-const IntroduceImageBox = styled.div`
-  opacity: 0.5;
-  background: #f00;
-  width: 100%;
-  height: 250px;
-`;
+const IntroduceContents = styled.div``;
 
 const IntroduceTitle = styled.h1`
   color: #000;
@@ -296,6 +291,7 @@ const IntroduceTitle = styled.h1`
   font-style: normal;
   font-weight: 600;
   line-height: 26px; /* 130% */
+  margin-top: 50px;
   margin-bottom: 20px;
 `;
 
