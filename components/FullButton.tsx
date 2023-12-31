@@ -33,7 +33,7 @@ const FullButton = ({
     <Container>
       <ButtonStyle isPrimary={isPrimary} onClick={onClick}>
         <div />
-        <span>다음으로</span>
+        <span>다음</span>
         <Arrow />
       </ButtonStyle>
     </Container>
@@ -45,7 +45,7 @@ const Container = styled.div`
 `;
 const ButtonStyle = styled.button<{ isPrimary: boolean }>`
   width: 100%;
-  padding: 18px 25px;
+  padding: 13px 25px;
   border-radius: 10px;
   display: flex;
   align-items: center;
