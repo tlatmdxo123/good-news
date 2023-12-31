@@ -22,6 +22,7 @@ const InputBox = styled.div`
   width: 100%;
   border-bottom: 1px solid #000000;
   padding-bottom: 10px;
+  height: 40px;
 
   input {
     width: 100%;
@@ -30,6 +31,8 @@ const InputBox = styled.div`
     font-family: "pretendard", sans-serif;
     font-weight: 300;
     font-style: normal;
+    margin-bottom: 0;
+    padding: 0;
 
     &::placeholder {
       color: ${({ theme }) => theme.gray_01};
