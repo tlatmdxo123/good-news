@@ -35,12 +35,15 @@ const LoadingPage = ({ onNext }: LoadingPageProps) => {
 };
 
 const Box = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
   gap: 29px;
+  background-image: url("/gradation.png");
+  background-size: cover;
 
   h1 {
     color: #000;

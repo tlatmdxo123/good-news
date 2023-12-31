@@ -76,13 +76,8 @@ const Box = styled.div`
   justify-content: center;
   height: 100%;
   gap: 50px;
-  opacity: 0.8;
-  background: linear-gradient(
-    192deg,
-    rgba(93, 216, 255, 0.89) 0%,
-    rgba(155, 47, 193, 0.38) 30.21%,
-    rgba(255, 255, 255, 0) 71.87%
-  );
+  background-image: url("/gradation.png");
+  background-size: cover;
 `;
 
 const TextContainer = styled.div`

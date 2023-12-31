@@ -186,13 +186,7 @@ const ResultPage = () => {
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  opacity: 0.8;
-  background: linear-gradient(
-    192deg,
-    rgba(93, 216, 255, 0.89) 0%,
-    rgba(155, 47, 193, 0.38) 30.21%,
-    rgba(255, 255, 255, 0) 71.87%
-  );
+  background: linear-gradient(180deg, #ebecff 0%, #e0e1fd 100%);
 
   .swiper {
     height: 100%;
