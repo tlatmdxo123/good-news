@@ -49,7 +49,7 @@ const ThisYearPage = ({ onNext }: ThisYearPageProps) => {
         <Container>
           <PageTitle
             title={`2023년은 ${name}님에게\n어떤 한해였나요?`}
-            subTitle="*최대 두개까지 선택할 수 있어요"
+            subTitle="*최대 두 개까지 선택할 수 있어요"
           />
         </Container>
       </PageLayout>
