@@ -227,7 +227,7 @@ const ImageBox = styled.div`
 `;
 
 const Letter = styled.div`
-  @media (max-height: 630px) {
+  @media (max-height: 670px) {
     display: none;
   }
 `;
