@@ -44,6 +44,8 @@ const NamePage = ({ onNext }: NamePageProps) => {
 
 const Container = styled.div`
   height: 100%;
+  padding-right: 30px;
+  padding-left: 10px;
 `;
 
 const InputWrapper = styled.div`
