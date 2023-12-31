@@ -26,18 +26,18 @@ const keywordList = [
 ];
 
 const wishList = [
-  { id: 1, label: "신앙의 훈련과 성장" },
-  { id: 2, label: "가정의 평화와 행복" },
-  { id: 3, label: "일터의 축복" },
-  { id: 4, label: "인간관계의 축복" },
-  { id: 5, label: "공부/학업의 지혜" },
-  { id: 6, label: "경제적 축복" },
-  { id: 7, label: "인생의 비전 발견" },
-  { id: 8, label: "양육/교육의 은혜" },
-  { id: 9, label: "일상의 기쁨과 평안" },
-  { id: 10, label: "건강의 치유와 회복" },
-  { id: 11, label: "마음의 평안과 휴식" },
-  { id: 12, label: "연애/결혼의 축복" },
+  { id: 1, label: "신앙의\n훈련과 성장" },
+  { id: 2, label: "가정의\n평화와 행복" },
+  { id: 3, label: "일터의\n축복" },
+  { id: 4, label: "인간관계의\n축복" },
+  { id: 5, label: "공부/학업의\n지혜" },
+  { id: 6, label: "경제적\n축복" },
+  { id: 7, label: "인생의\n비전 발견" },
+  { id: 8, label: "양육/교육의\n은혜" },
+  { id: 9, label: "일상의\n기쁨과 평안" },
+  { id: 10, label: "건강의\n치유와 회복" },
+  { id: 11, label: "마음의\n평안과 휴식" },
+  { id: 12, label: "연애/결혼의\n축복" },
 ];
 
 const letterList: {

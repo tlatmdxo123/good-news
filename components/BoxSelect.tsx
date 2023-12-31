@@ -26,6 +26,7 @@ const Box = styled.li`
   text-align: center;
   padding: 0 12px;
   box-sizing: border-box;
+  white-space: pre-wrap;
 
   &.active {
     background-color: ${({ theme }) => theme.primary};
