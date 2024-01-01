@@ -82,29 +82,32 @@ const ShareCard = ({ shareOpen }: { shareOpen: () => void }) => {
 
   useEffect(() => {
     //@ts-ignore
-    Kakao.Link.createDefaultButton({
-      container: "#kakao-share",
-      objectType: "feed",
-      content: {
-        title: "콤케드와 함께 하는 2024년 새해 약속의 말씀",
-        imageUrl:
-          "https://github.com/tlatmdxo123/good-news/blob/main/public/og.png?raw=true",
-        link: {
-          // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-          mobileWebUrl: "https://good-news-gamma.vercel.app",
-          webUrl: "https://good-news-gamma.vercel.app",
-        },
-      },
-      buttons: [
-        {
-          title: "말씀카드 확인하기",
+    if (typeof Kakao.Link !== "undefined") {
+      //@ts-ignore
+      Kakao.Link.createDefaultButton({
+        container: "#kakao-share",
+        objectType: "feed",
+        content: {
+          title: "콤케드와 함께 하는 2024년 새해 약속의 말씀",
+          imageUrl:
+            "https://github.com/tlatmdxo123/good-news/blob/main/public/og.png?raw=true",
           link: {
-            mobileWebUrl: "https://good-news-gamma.vercel.app/",
-            webUrl: "https://good-news-gamma.vercel.app/",
+            // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+            mobileWebUrl: "https://good-news-gamma.vercel.app",
+            webUrl: "https://good-news-gamma.vercel.app",
           },
         },
-      ],
-    });
+        buttons: [
+          {
+            title: "말씀카드 확인하기",
+            link: {
+              mobileWebUrl: "https://good-news-gamma.vercel.app/",
+              webUrl: "https://good-news-gamma.vercel.app/",
+            },
+          },
+        ],
+      });
+    }
   }, []);
 
   const share = () => {
