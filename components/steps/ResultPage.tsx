@@ -215,12 +215,10 @@ const ResultPage = () => {
 
   //@ts-ignore
   if (typeof Kakao !== "undefined") {
-    console.log("init1");
     //@ts-ignore
     if (!Kakao.isInitialized()) {
       //@ts-ignore
       Kakao.init("6e3c263d4c0db34a0644c6b5fab6dac3");
-      console.log("init");
     }
   }
 
@@ -321,6 +319,10 @@ const Title = styled.h1`
   font-weight: 400;
   line-height: 30px; /* 136.364% */
   white-space: pre-wrap;
+
+  @media (max-width: 380px) {
+    font-size: 20px;
+  }
 `;
 
 const Info = styled.p`
@@ -332,6 +334,10 @@ const Info = styled.p`
   font-weight: 600;
   line-height: 20px; /* 111.111% */
   margin-top: 10px;
+
+  @media (max-width: 380px) {
+    font-size: 16px;
+  }
 `;
 
 const SubTitle = styled.h2`
@@ -344,6 +350,10 @@ const SubTitle = styled.h2`
   line-height: 20px; /* 125% */
   white-space: pre-wrap;
   margin-bottom: 10px;
+
+  @media (max-width: 380px) {
+    font-size: 15px;
+  }
 `;
 
 const SubInfo = styled.p`
@@ -354,6 +364,10 @@ const SubInfo = styled.p`
   font-style: normal;
   font-weight: 600;
   line-height: 20px; /* 166.667% */
+
+  @media (max-width: 380px) {
+    font-size: 11px;
+  }
 `;
 
 const IntroduceContainer = styled.div`
