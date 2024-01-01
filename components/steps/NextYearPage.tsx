@@ -42,7 +42,7 @@ const NextYearPage = ({ onNext }: NextYearPageProps) => {
           }
         >
           <PageTitle
-            title={`2024년에는\n어떤 바램들이 있으신가요?`}
+            title={`2024년에는\n어떤 바람들이 있으신가요?`}
             subTitle="*최대 두 개까지 선택할 수 있어요"
           />
         </PageLayout>
