@@ -9,8 +9,8 @@ export default function App({ Component, pageProps }: AppProps) {
     //@ts-ignore
     if (!Kakao.isInitialized()) {
       //@ts-ignore
-      console.log("init");
       Kakao.init("6e3c263d4c0db34a0644c6b5fab6dac3");
+      console.log("init");
     }
   }
 
