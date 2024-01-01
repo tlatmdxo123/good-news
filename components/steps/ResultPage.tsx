@@ -6,7 +6,7 @@ import { KeywordRepository } from "@/repository/KeywordRepository";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useInfoStore } from "@/store/useInfoStore";
 
@@ -77,12 +77,44 @@ const IntroduceCard = ({ onModalOpen }: { onModalOpen: () => void }) => {
   );
 };
 
-const ShareCard = () => {
+const ShareCard = ({ shareOpen }: { shareOpen: () => void }) => {
   const setStep = useInfoStore((state) => state.moveStep);
-  const share = () => {
-    window.navigator.share({
-      url: "https://good-news-gamma.vercel.app/",
+
+  useEffect(() => {
+    Kakao.Link.createDefaultButton({
+      container: "#kakao-share",
+      objectType: "feed",
+      content: {
+        title: "콤케드와 함께 하는 2024년 새해 약속의 말씀",
+        imageUrl:
+          "https://github.com/tlatmdxo123/good-news/blob/main/public/og.png?raw=true",
+        link: {
+          // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+          mobileWebUrl: "https://good-news-gamma.vercel.app",
+          webUrl: "https://good-news-gamma.vercel.app",
+        },
+      },
+      buttons: [
+        {
+          title: "말씀카드 확인하기",
+          link: {
+            mobileWebUrl: "https://good-news-gamma.vercel.app/",
+            webUrl: "https://good-news-gamma.vercel.app/",
+          },
+        },
+      ],
     });
+  }, []);
+
+  const share = () => {
+    shareOpen();
+    // if (window.navigator.share) {
+    //   window.navigator.share({
+    //     url: "https://good-news-gamma.vercel.app/",
+    //   });
+    // } else {
+    //   setOpen(true);
+    // }
   };
 
   return (
@@ -176,6 +208,7 @@ const SponsorButton = () => {
 
 const ResultPage = () => {
   const [isOpen, setOpen] = useState(false);
+  const [isShare, setShareOpen] = useState(false);
 
   return (
     <Stack>
@@ -188,11 +221,30 @@ const ResultPage = () => {
             <IntroduceCard onModalOpen={() => setOpen(true)} />
           </SwiperSlide>
           <SwiperSlide>
-            <ShareCard />
+            <ShareCard shareOpen={() => setShareOpen(true)} />
           </SwiperSlide>
         </Swiper>
       </Container>
       {isOpen && <SponsorModal close={() => setOpen(false)} />}
+      <div style={{ display: isShare ? "block" : "none" }}>
+        <Backdrop onClick={() => setShareOpen(false)}>
+          <ShareModalContainer>
+            <h3>상품공유</h3>
+            <button
+              onClick={() =>
+                navigator.clipboard
+                  .writeText("https://good-news-gamma.vercel.app/")
+                  .then(() => {
+                    alert("링크가 복사되었습니다");
+                  })
+              }
+            >
+              링크 복사하기
+            </button>
+            <button id="kakao-share">카카오톡으로 공유하기</button>
+          </ShareModalContainer>
+        </Backdrop>
+      </div>
     </Stack>
   );
 };
@@ -439,6 +491,38 @@ const ModalLabel = styled.span`
   font-style: normal;
   font-weight: 500;
   line-height: 26px; /* 152.941% */
+`;
+
+const ShareModalContainer = styled.div`
+  background: #ffffff;
+  width: 100vw;
+  max-width: 450px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 100;
+  font-family: Pretendard;
+  padding-bottom: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+  h3 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 13px;
+  }
+  button {
+    color: #000000;
+    background: #ffffff;
+    width: 100%;
+    text-align: start;
+    font-size: 18px;
+    padding: 10px;
+    &:first-child {
+      border-bottom: 1px solid lightgray;
+    }
+  }
 `;
 
 const BookIcon = () => {

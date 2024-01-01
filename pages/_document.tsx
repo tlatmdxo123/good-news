@@ -53,7 +53,12 @@ export default class MyDocument extends Document {
             property="og:image"
             content="https://github.com/tlatmdxo123/good-news/blob/main/public/og.png?raw=true"
           />
+          <script
+            src="https://developers.kakao.com/sdk/js/kakao.min.js"
+            async
+          ></script>
         </Head>
+
         <script
           dangerouslySetInnerHTML={{
             __html: `(function (d) {
