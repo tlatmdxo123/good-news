@@ -115,20 +115,27 @@ const SponsorModal = ({ close }: { close: () => void }) => {
         </ModalTitle>
         <ModalButtonContainer>
           <a
-            style={{ display: "block", height: "95px" }}
             target="blank"
-            href="https://mrmweb.hsit.co.kr/v2/Member/MemberJoin.aspx?action=join&server=R%20ymWRGciEHntzyO2dIUpw=="
-          >
-            <ModalButton>
-              <ModalBullet />
-            </ModalButton>
-          </a>
-          <a
-            target="blank"
-            style={{ display: "block", height: "95px" }}
+            style={{ display: "block", height: "121px" }}
             href="https://mrmweb.hsit.co.kr/v2/Member/SupportOnce.aspx?action=once&server=R%20ymWRGciEHntzyO2dIUpw=="
           >
-            <SponsorButton />
+            <ModalLink>
+              <ModalButton>
+                <ModalBullet />
+              </ModalButton>
+              <ModalLabel>일시 후원</ModalLabel>
+            </ModalLink>
+          </a>
+
+          <a
+            target="blank"
+            style={{ display: "block", height: "121px" }}
+            href="https://mrmweb.hsit.co.kr/v2/Member/MemberJoin.aspx?action=join&server=R%20ymWRGciEHntzyO2dIUpw=="
+          >
+            <ModalLink>
+              <SponsorButton />
+              <ModalLabel>정기 후원</ModalLabel>
+            </ModalLink>
           </a>
         </ModalButtonContainer>
         <ModalBottomButton onClick={close}>닫기</ModalBottomButton>
@@ -409,6 +416,24 @@ const ModalBottomButton = styled.button`
   font-style: normal;
   font-weight: 500;
   line-height: 24px; /* 109.091% */
+`;
+
+const ModalLink = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 95px;
+  height: 121px;
+`;
+
+const ModalLabel = styled.span`
+  color: #575757;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 152.941% */
 `;
 
 const BookIcon = () => {
