@@ -59,7 +59,7 @@ const IntroduceCard = ({ onModalOpen }: { onModalOpen: () => void }) => {
           <IntroduceSubInfo>
             선교사 자녀들은 세계 선교 완성을 위해
             <br />
-            하나님께서 한국교회에 주신 선물입니다.
+            하나님께서 우리에게 주신 선물입니다.
           </IntroduceSubInfo>
         </CommonCotents>
 

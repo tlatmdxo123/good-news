@@ -43,7 +43,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta
             property="og:title"
-            content="콤케드와 함께 하는 2024년 신년말씀 뽑기"
+            content="콤케드와 함께 하는 2024년 새해 약속의 말씀"
           />
           <meta
             property="og:url"
