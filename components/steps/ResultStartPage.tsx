@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Stack from "@/components/Stack";
 import { PageProps } from "@/types/common";
+import { useInfoStore } from "@/store/useInfoStore";
 
 interface ResultStartPageProps extends PageProps {}
 
@@ -51,6 +52,8 @@ const Logo = () => {
 };
 
 const ResultStartPage = ({ onNext }: ResultStartPageProps) => {
+  const name = useInfoStore((state) => state.name);
+
   return (
     <Stack>
       <Box>
@@ -58,7 +61,7 @@ const ResultStartPage = ({ onNext }: ResultStartPageProps) => {
         <TextContainer>
           <Title>말씀이 도착했어요!</Title>
           <SubTitle>
-            홍길동님을 위한 새해 말씀이 도착했어요.
+            {name}님을 위한 새해 말씀이 도착했어요.
             <br /> 기도하는 마음으로 함께 열어보아요.
           </SubTitle>
         </TextContainer>
