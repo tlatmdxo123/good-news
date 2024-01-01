@@ -55,6 +55,10 @@ const SelectFrame = styled.div`
   white-space: nowrap;
   padding-right: 20px;
   margin-bottom: 20px;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
   &::-webkit-scrollbar {
