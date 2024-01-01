@@ -213,6 +213,17 @@ const ResultPage = () => {
   const [isOpen, setOpen] = useState(false);
   const [isShare, setShareOpen] = useState(false);
 
+  //@ts-ignore
+  if (typeof Kakao !== "undefined") {
+    console.log("init1");
+    //@ts-ignore
+    if (!Kakao.isInitialized()) {
+      //@ts-ignore
+      Kakao.init("6e3c263d4c0db34a0644c6b5fab6dac3");
+      console.log("init");
+    }
+  }
+
   return (
     <Stack>
       <Container>
