@@ -5,7 +5,9 @@ import { useEffect } from "react";
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     //@ts-ignore
-    if (!Kakao.isInitialized()) Kakao.init("6e3c263d4c0db34a0644c6b5fab6dac3");
+    if (Kakao && !Kakao.isInitialized())
+      //@ts-ignore
+      Kakao.init("6e3c263d4c0db34a0644c6b5fab6dac3");
   }, []);
 
   return (
