@@ -499,7 +499,8 @@ const ShareModalContainer = styled.div`
   max-width: 450px;
   position: absolute;
   bottom: 0px;
-  left: 0px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
   font-family: Pretendard;
   padding-bottom: 10px;
