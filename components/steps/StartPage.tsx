@@ -116,10 +116,9 @@ const StartPage = ({ onNext }: StartPageProps) => {
           </Button>
         </ContentBox>
         <SubInfo>
-          본 이벤트는 한국선교사자녀교육개발원 콤케드에서 제작됐습니다.
+          본 이벤트는 한국선교사자녀교육개발원에서 제작됐습니다.
         </SubInfo>
         <BottomContainer>
-          <BottomText>한국선교사자녀교육개발원</BottomText>
           <SmallLogo />
         </BottomContainer>
       </Container>
@@ -192,17 +191,6 @@ const BottomContainer = styled.div`
   position: absolute;
   bottom: 14px;
   right: 20px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-`;
-const BottomText = styled.div`
-  color: #fff;
-  font-family: Pretendard;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px; /* 166.667% */
 `;
 
 export default StartPage;
