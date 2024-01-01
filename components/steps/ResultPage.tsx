@@ -62,7 +62,9 @@ const IntroduceCard = ({ onModalOpen }: { onModalOpen: () => void }) => {
         </CommonCotents>
 
         <CommonButtonContainer>
-          <CommonButton href="https://komked.org/mklc/">사역소개</CommonButton>
+          <CommonButton href="https://stibee.com/api/v1.0/emails/share/E_NO1Qf-xJYVj9AlrFchAZAGP7h33Y4">
+            사역소개
+          </CommonButton>
           <CommonButton onClick={onModalOpen}>후원하기</CommonButton>
         </CommonButtonContainer>
       </IntroduceContainer>
@@ -346,6 +348,7 @@ const Backdrop = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 46px;
+  z-index: 100;
 `;
 
 const ModalContainer = styled.div`
