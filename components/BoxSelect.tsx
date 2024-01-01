@@ -27,6 +27,11 @@ const Box = styled.li`
   padding: 0 12px;
   box-sizing: border-box;
   white-space: pre-wrap;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 125% */
 
   &.active {
     background-color: ${({ theme }) => theme.primary};

@@ -52,17 +52,22 @@ const IntroduceCard = ({ onModalOpen }: { onModalOpen: () => void }) => {
             alt="여러 사람 이미지"
           />
           <IntroduceTitle>
-            콤케드는 선교사 자녀를 위한
-            <br /> 사역을 하고 있습니다.
+            콤케드는 선교사 자녀들을 위한
+            <br />
+            {`'MK 전문사역기관'입니다`}
           </IntroduceTitle>
           <IntroduceSubInfo>
             선교사 자녀들은 세계 선교 완성을 위해
-            <br /> 하나님께서 한국교회에 주신 선물입니다.
+            <br />
+            하나님께서 한국교회에 주신 선물입니다.
           </IntroduceSubInfo>
         </CommonCotents>
 
         <CommonButtonContainer>
-          <CommonButton href="https://stibee.com/api/v1.0/emails/share/E_NO1Qf-xJYVj9AlrFchAZAGP7h33Y4">
+          <CommonButton
+            href="https://stibee.com/api/v1.0/emails/share/E_NO1Qf-xJYVj9AlrFchAZAGP7h33Y4"
+            target="blank"
+          >
             사역소개
           </CommonButton>
           <CommonButton onClick={onModalOpen}>후원하기</CommonButton>

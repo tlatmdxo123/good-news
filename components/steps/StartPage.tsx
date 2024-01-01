@@ -115,9 +115,7 @@ const StartPage = ({ onNext }: StartPageProps) => {
             시작하기
           </Button>
         </ContentBox>
-        <SubInfo>
-          본 이벤트는 한국선교사자녀교육개발원에서 제작됐습니다.
-        </SubInfo>
+        <SubInfo>본 프로젝트는 한국선교사자녀교육개발원과 함께합니다.</SubInfo>
         <BottomContainer>
           <SmallLogo />
         </BottomContainer>
@@ -172,7 +170,7 @@ const Button = styled.button`
   font-family: Pretendard;
   font-size: 22px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24px; /* 109.091% */
   cursor: pointer;
 `;
