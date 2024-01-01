@@ -81,6 +81,7 @@ const ShareCard = ({ shareOpen }: { shareOpen: () => void }) => {
   const setStep = useInfoStore((state) => state.moveStep);
 
   useEffect(() => {
+    //@ts-ignore
     Kakao.Link.createDefaultButton({
       container: "#kakao-share",
       objectType: "feed",
@@ -107,14 +108,13 @@ const ShareCard = ({ shareOpen }: { shareOpen: () => void }) => {
   }, []);
 
   const share = () => {
-    shareOpen();
-    // if (window.navigator.share) {
-    //   window.navigator.share({
-    //     url: "https://good-news-gamma.vercel.app/",
-    //   });
-    // } else {
-    //   setOpen(true);
-    // }
+    if (window.navigator.share) {
+      window.navigator.share({
+        url: "https://good-news-gamma.vercel.app/",
+      });
+    } else {
+      shareOpen();
+    }
   };
 
   return (
